@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+const fs = require('fs');
+
+const code = `import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Maximize2 } from 'lucide-react';
 
@@ -40,7 +42,7 @@ export function GallerySection() {
   }, [selectedImage]);
 
   return (
-    <section className="py-16 md:py-24 lg:py-32 bg-primary-bg border-t border-border-subtle relative overflow-hidden">
+    <section className="py-16 md:py-24 lg:py-32 bg-primary-bg border-y border-border-subtle relative overflow-hidden">
       {/* Background ambient lighting */}
       <div className="absolute inset-0 theme-glow-bg opacity-10 pointer-events-none"></div>
 
@@ -50,17 +52,17 @@ export function GallerySection() {
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary">The Madhyam Yog Experience</h2>
         </div>
 
-        {/* Larger 3-Column Grid Layout to cover extra space */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        {/* 4x3 Grid Layout as requested */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
           {galleryImages.map((image, idx) => (
             <motion.div
               key={image.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: (idx % 3) * 0.1, duration: 0.6 }}
+              transition={{ delay: (idx % 4) * 0.1, duration: 0.6 }}
               onClick={() => setSelectedImage(image.url)}
-              className="relative overflow-hidden cursor-pointer group rounded-2xl bg-card-bg shadow-sm hover:shadow-xl transition-all duration-500 aspect-[4/3]"
+              className="relative overflow-hidden cursor-pointer group rounded-xl bg-card-bg shadow-sm hover:shadow-xl transition-all duration-500 aspect-[4/3]"
             >
               <img
                 src={image.url}
@@ -117,3 +119,5 @@ export function GallerySection() {
     </section>
   );
 }
+`;
+fs.writeFileSync('src/components/GallerySection.tsx', code);

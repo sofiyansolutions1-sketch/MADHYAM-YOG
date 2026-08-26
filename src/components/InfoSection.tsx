@@ -32,9 +32,9 @@ export function WhyChoose() {
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-primary-bg">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="w-full px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif text-text-primary">More Than a Yoga Class</h2>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary">More Than a Yoga Class</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-center">
@@ -49,9 +49,9 @@ export function WhyChoose() {
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
                 className="group border border-border-subtle p-8 hover:bg-secondary-bg transition-colors"
               >
-                <Icon className="w-8 h-8 text-primary-blue mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+                <Icon className="w-8 h-8 text-primary-theme mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                 <h3 className="text-xl font-serif text-text-primary mb-3">{feat.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{feat.desc}</p>
+                <p className="text-text-lg leading-relaxed">{feat.desc}</p>
               </motion.div>
             )
           })}
@@ -68,9 +68,9 @@ export function WhyChoose() {
                 transition={{ delay: (idx + 3) * 0.1, duration: 0.5 }}
                 className="group border border-border-subtle p-8 hover:bg-secondary-bg transition-colors"
               >
-                <Icon className="w-8 h-8 text-primary-blue mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
+                <Icon className="w-8 h-8 text-primary-theme mb-6 group-hover:scale-110 transition-transform" strokeWidth={1.5} />
                 <h3 className="text-xl font-serif text-text-primary mb-3">{feat.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{feat.desc}</p>
+                <p className="text-text-lg leading-relaxed">{feat.desc}</p>
               </motion.div>
             )
           })}
@@ -92,14 +92,14 @@ export function WhoIsItFor() {
 
   return (
     <section className="py-24 bg-card-bg border-y border-border-subtle">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="w-full px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
           <div>
-             <h2 className="text-4xl md:text-5xl font-serif text-text-primary mb-4">Is Madhyam Yog Right For You?</h2>
+             <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary mb-4">Is Madhyam Yog Right For You?</h2>
           </div>
           <a
              href="#programs"
-             className="bg-primary-blue hover:bg-accent-blue text-white px-6 py-3 text-sm font-medium tracking-wider uppercase transition-colors"
+             className="bg-primary-theme hover:bg-accent-theme text-white px-6 py-3 font-medium tracking-wider uppercase transition-colors"
           >
              Find Your Program
           </a>
@@ -109,18 +109,18 @@ export function WhoIsItFor() {
           {personas.map((persona, idx) => (
             <motion.div
               key={persona.title}
-              initial={{ opacity: 0, opacity: 0 }}
+              initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1, duration: 0.5 }}
               className="flex items-start gap-4"
             >
-              <div className="w-8 h-8 rounded-full border border-primary-blue flex items-center justify-center flex-shrink-0 mt-1 bg-primary-blue/10">
-                <ShieldCheck className="w-4 h-4 text-primary-blue" />
+              <div className="w-8 h-8 rounded-full border border-primary-theme flex items-center justify-center flex-shrink-0 mt-1 bg-primary-theme/10">
+                <ShieldCheck className="w-4 h-4 text-primary-theme" />
               </div>
               <div>
                 <h3 className="text-lg font-serif text-text-primary mb-2">{persona.title}</h3>
-                <p className="text-text-secondary text-sm">{persona.desc}</p>
+                <p className="text-text-lg">{persona.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -133,7 +133,7 @@ export function WhoIsItFor() {
 export function OnlineExperience() {
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-primary-bg">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="w-full px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <motion.div
@@ -142,23 +142,23 @@ export function OnlineExperience() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-text-primary mb-6">Wellness That Fits Into Your Life</h2>
-            <p className="text-text-secondary text-lg mb-10 leading-relaxed">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary mb-8 leading-tight">Wellness That Fits Into Your Life</h2>
+            <p className="text-text-secondary text-xl md:text-2xl lg:text-3xl mb-12 leading-relaxed">
               Access guided wellness support from wherever you are. Our online platform brings premium Yoga and personalized coaching directly to your home. Receive a daily Zoom meeting link after joining. Connect with us on Zoom for live, interactive online yoga sessions. We teach and guide you live via Zoom to ensure personalized attention.
             </p>
             
-            <div className="space-y-4 mb-10">
+            <div className="space-y-6 mb-12">
               {['Online guided sessions', 'Personalised guidance', 'Structured programs', 'Regular accountability', 'Flexible participation', 'Digital wellness journey'].map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary-blue"></div>
-                  <span className="text-text-primary">{feature}</span>
+                <div key={feature} className="flex items-center gap-4">
+                  <div className="w-2 h-2 rounded-full bg-primary-theme shrink-0"></div>
+                  <span className="text-text-primary text-lg md:text-xl lg:text-2xl">{feature}</span>
                 </div>
               ))}
             </div>
 
             <a
               href="#contact"
-              className="bg-transparent border border-border-subtle hover:border-primary-blue text-text-primary px-8 py-4 text-sm font-medium tracking-wider uppercase transition-all inline-block"
+              className="bg-transparent border border-border-subtle hover:border-primary-theme text-text-primary px-10 py-5 text-base md:text-lg font-medium tracking-wider uppercase transition-all inline-block"
             >
               Start Online
             </a>
@@ -169,23 +169,16 @@ export function OnlineExperience() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative h-[500px]"
+            className="relative aspect-video w-full mx-auto lg:mx-0 rounded-2xl overflow-hidden shadow-2xl"
           >
-            <div className="absolute inset-0 bg-primary-blue/5 border border-border-subtle p-4">
-              <img 
-                src="https://images.unsplash.com/photo-1593164842264-854604db2260?auto=format&fit=crop&q=80" 
-                alt="Online Yoga Experience"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Abstract laptop/phone framing elements */}
-            <div className="absolute -bottom-6 -right-6 w-48 h-64 border border-primary-blue/30 bg-primary-bg p-2 shadow-2xl">
-               <img 
-                src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&q=80" 
-                alt="Mobile Yoga Experience"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <video
+              src="https://res.cloudinary.com/kvdymfeq/video/upload/v1787652767/Abhi_is_video_ko_same_video_k.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            />
           </motion.div>
 
         </div>
@@ -204,14 +197,14 @@ export function HowItWorks() {
 
   return (
     <section className="py-24 bg-secondary-bg border-y border-border-subtle overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-serif text-text-primary text-center mb-20">How It Works</h2>
+      <div className="w-full px-6 lg:px-8">
+        <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary text-center mb-20">How It Works</h2>
         
         <div className="relative">
           {/* Connecting line */}
           <div className="hidden md:block absolute top-6 left-[10%] right-[10%] h-px bg-border-subtle">
              <motion.div 
-               className="absolute inset-0 bg-primary-blue origin-left"
+               className="absolute inset-0 bg-primary-theme origin-left"
                initial={{ scaleX: 0 }}
                whileInView={{ scaleX: 1 }}
                viewport={{ once: true }}
@@ -229,12 +222,12 @@ export function HowItWorks() {
                 transition={{ delay: idx * 0.3, duration: 0.5 }}
                 className="flex flex-col items-center"
               >
-                <div className="w-12 h-12 rounded-full bg-primary-bg border border-primary-blue text-primary-blue flex items-center justify-center font-serif text-lg mb-6 relative">
+                <div className="w-12 h-12 rounded-full bg-primary-bg border border-primary-theme text-primary-theme flex items-center justify-center font-serif text-lg mb-6 relative">
                   {step.num}
-                  <div className="absolute inset-0 rounded-full bg-primary-blue/20 blur-md"></div>
+                  <div className="absolute inset-0 rounded-full bg-primary-theme/20 blur-md"></div>
                 </div>
                 <h3 className="text-xl font-serif text-text-primary mb-3">{step.title}</h3>
-                <p className="text-text-secondary text-sm leading-relaxed">{step.desc}</p>
+                <p className="text-text-lg leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>

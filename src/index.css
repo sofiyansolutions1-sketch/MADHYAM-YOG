@@ -1,18 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary-bg: #05070B;
-  --color-secondary-bg: #0A101A;
-  --color-card-bg: #0E1622;
-  --color-primary-blue: #168BFF;
-  --color-accent-blue: #38B6FF;
-  --color-glow-blue: #6CCBFF;
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #AAB6C5;
-  --color-border-subtle: rgba(255, 255, 255, 0.10);
-
+  --color-primary-bg: #F5F2EA;
+  --color-secondary-bg: #EAE5D9;
+  --color-card-bg: #FCFAF7;
+  --color-primary-theme: #2A4D3A;
+  --color-accent-theme: #3D664F;
+  --color-glow-theme: #7A9B84;
+  --color-text-primary: #1B3024;
+  --color-text-secondary: #475C4E;
+  --color-border-subtle: rgba(42, 77, 58, 0.12);
   --font-serif: 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
@@ -28,16 +27,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .glass-nav {
-  background: rgba(5, 7, 11, 0.7);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
-.text-glow {
-  text-shadow: 0 0 20px rgba(108, 203, 255, 0.3);
-}
 
-.blue-glow-bg {
-  background: radial-gradient(circle at center, rgba(22, 139, 255, 0.15) 0%, transparent 70%);
+.theme-glow-bg {
+  background: radial-gradient(circle at center, rgba(122, 155, 132, 0.15) 0%, transparent 70%);
 }

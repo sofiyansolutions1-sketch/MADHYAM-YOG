@@ -89,10 +89,10 @@ const programs = [
 export function Programs() {
   return (
     <section id="programs" className="py-16 md:py-24 lg:py-32 bg-secondary-bg">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="w-full px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <h2 className="text-4xl md:text-5xl font-serif text-text-primary mb-6">Wellness Designed Around You</h2>
-          <p className="text-text-secondary text-lg">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary mb-6">Wellness Designed Around You</h2>
+          <p className="text-text-2xl">
             Different bodies, lifestyles and goals require different approaches.
           </p>
         </div>
@@ -107,28 +107,28 @@ export function Programs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: (idx % 3) * 0.1, duration: 0.5 }}
-                className="group flex flex-col bg-card-bg border border-border-subtle p-8 hover:border-primary-blue/50 transition-colors duration-300 relative overflow-hidden"
+                className="group flex flex-col bg-card-bg border border-border-subtle p-8 hover:border-primary-theme/50 transition-colors duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity duration-500 group-hover:scale-110 transform">
-                  <Icon className="w-24 h-24 text-primary-blue" />
+                  <Icon className="w-24 h-24 text-primary-theme" />
                 </div>
                 
                 <div className="mb-6 relative z-10">
-                  <p className="text-primary-blue text-xs font-semibold uppercase tracking-widest mb-3 flex items-center gap-2">
-                    <span className="w-4 h-px bg-primary-blue"></span>
+                  <p className="text-primary-theme text-xs font-semibold uppercase tracking-widest mb-3 flex items-center gap-2">
+                    <span className="w-4 h-px bg-primary-theme"></span>
                     {String(prog.id).padStart(2, '0')}
                   </p>
-                  <h3 className="text-2xl font-serif text-text-primary mb-2 group-hover:text-glow transition-all">{prog.title}</h3>
-                  <p className="text-sm font-medium text-text-secondary uppercase tracking-wider">{prog.subtitle}</p>
+                  <h3 className="text-3xl lg:text-4xl font-serif text-text-primary mb-2 transition-all">{prog.title}</h3>
+                  <p className="font-medium text-text-secondary uppercase tracking-wider">{prog.subtitle}</p>
                 </div>
                 
                 <div className="flex-1 relative z-10 mb-8">
                   {prog.formula && (
-                    <p className="text-xs font-semibold text-primary-blue uppercase tracking-widest mb-4 bg-primary-blue/10 p-3 border border-primary-blue/20">
+                    <p className="text-xs font-semibold text-primary-theme uppercase tracking-widest mb-4 bg-primary-theme/10 p-3 border border-primary-theme/20">
                       {prog.formula}
                     </p>
                   )}
-                  <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                  <p className="text-text-lg leading-relaxed mb-6">
                     {prog.desc}
                   </p>
                   
@@ -136,7 +136,7 @@ export function Programs() {
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                       {prog.includes.map(item => (
                         <li key={item} className="flex items-start gap-2 text-xs text-text-secondary">
-                           <div className="w-1 h-1 rounded-full bg-primary-blue mt-1.5 flex-shrink-0"></div>
+                           <div className="w-1 h-1 rounded-full bg-primary-theme mt-1.5 flex-shrink-0"></div>
                            {item}
                         </li>
                       ))}
@@ -145,7 +145,7 @@ export function Programs() {
                 </div>
                 
                 <div className="relative z-10 mt-auto">
-                  <a href="#contact" className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-text-primary group-hover:text-primary-blue transition-colors">
+                  <a href="#contact" className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-text-primary group-hover:text-primary-theme transition-colors">
                     {prog.cta}
                     <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   </a>
@@ -190,9 +190,9 @@ export function FeaturedProgram() {
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-primary-bg relative border-y border-border-subtle overflow-hidden">
-      <div className="absolute inset-0 blue-glow-bg opacity-20"></div>
+      <div className="absolute inset-0 theme-glow-bg opacity-20"></div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div className="w-full px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           <motion.div
@@ -201,19 +201,19 @@ export function FeaturedProgram() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block border border-primary-blue/30 bg-primary-blue/5 px-4 py-1.5 mb-6">
-               <p className="text-primary-blue text-xs uppercase tracking-widest font-semibold">Hero Program • Not a crash diet</p>
+            <div className="inline-block border border-primary-theme/30 bg-primary-theme/5 px-4 py-1.5 mb-6">
+               <p className="text-primary-theme text-xs uppercase tracking-widest font-semibold">Hero Program • Not a crash diet</p>
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-text-primary mb-4 leading-tight">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif text-text-primary mb-4 leading-tight">
               90 DAYS.<br />ONE HEALTHIER YOU.
             </h2>
-            <p className="text-lg md:text-xl text-text-secondary mb-8 md:mb-12">90 Days to Build Better Habits</p>
+            <p className="text-2xl text-text-secondary mb-8 md:mb-12">90 Days to Build Better Habits</p>
             
             <div className="space-y-6 mb-10 md:mb-12">
                {pillars.map((pillar) => (
                  <div key={pillar.title} className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <div className="w-full sm:w-24 flex-shrink-0">
-                      <span className="text-xs sm:text-sm font-bold text-text-primary tracking-wider uppercase">{pillar.title}</span>
+                      <span className="text-sm font-bold text-text-primary tracking-wider uppercase">{pillar.title}</span>
                     </div>
                     <div className="hidden sm:block flex-1 h-px bg-border-subtle"></div>
                     <div className="flex-1">
@@ -225,7 +225,7 @@ export function FeaturedProgram() {
 
             <button
               onClick={handleEnquireClick}
-              className="bg-primary-blue hover:bg-accent-blue text-white px-8 py-4 text-sm font-medium tracking-wider uppercase transition-all duration-300 w-full sm:w-auto text-center"
+              className="bg-primary-theme hover:bg-accent-theme text-white px-8 py-4 font-medium tracking-wider uppercase transition-all duration-300 w-full sm:w-auto text-center"
             >
               Start Your 90-Day Journey
             </button>
@@ -239,7 +239,7 @@ export function FeaturedProgram() {
             className="relative"
           >
             <div className="p-6 sm:p-8 border border-border-subtle bg-card-bg/80 backdrop-blur">
-              <h3 className="text-xl sm:text-2xl font-serif text-text-primary mb-8 sm:mb-12 text-center">Your Transformation Timeline</h3>
+              <h3 className="text-xl sm:text-3xl lg:text-4xl font-serif text-text-primary mb-8 sm:mb-12 text-center">Your Transformation Timeline</h3>
               
               <div className="relative">
                 <div className="absolute left-[59px] sm:left-[107px] top-4 bottom-4 w-px bg-border-subtle"></div>
@@ -256,9 +256,9 @@ export function FeaturedProgram() {
                       <div className="w-[45px] sm:w-[80px] text-right flex-shrink-0">
                          <span className="text-[10px] sm:text-xs font-semibold text-text-secondary tracking-widest">{step.week}</span>
                       </div>
-                      <div className="w-2 h-2 rounded-full bg-primary-blue shadow-[0_0_10px_rgba(22,139,255,0.8)] relative z-10 flex-shrink-0"></div>
-                      <div className="bg-primary-bg border border-border-subtle px-4 sm:px-6 py-3 sm:py-4 flex-1 group hover:border-primary-blue/50 transition-colors">
-                        <span className="text-sm sm:text-lg font-serif text-text-primary tracking-wider group-hover:text-primary-blue transition-colors">{step.label}</span>
+                      <div className="w-2 h-2 rounded-full bg-primary-theme shadow-[0_0_10px_rgba(42,77,58,0.8)] relative z-10 flex-shrink-0"></div>
+                      <div className="bg-primary-bg border border-border-subtle px-4 sm:px-6 py-3 sm:py-4 flex-1 group hover:border-primary-theme/50 transition-colors">
+                        <span className="text-lg font-serif text-text-primary tracking-wider group-hover:text-primary-theme transition-colors">{step.label}</span>
                       </div>
                     </motion.div>
                   ))}

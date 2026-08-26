@@ -1,4 +1,8 @@
-import { useState, useEffect } from 'react';
+const fs = require('fs');
+let content = fs.readFileSync('src/components/Layout.tsx', 'utf8');
+
+// The new Layout.tsx content (header and sticky footer)
+const layoutTsx = `import { useState, useEffect } from 'react';
 import { MessageCircle, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -27,12 +31,12 @@ export function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav ${
-          isScrolled ? 'py-2 lg:py-4' : 'py-3 lg:py-6'
-        }`}
+        className={\`fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-nav \${
+          isScrolled ? 'py-4' : 'py-6'
+        }\`}
       >
         <div className="w-full px-6 lg:px-8 flex items-center justify-between">
-          <div className="flex flex-col">
+          <div className="flex flex-col mx-auto md:mx-0">
             <Link to="/" className="flex items-center gap-3 md:gap-4 group">
               <img 
                 src={logoBrand} 
@@ -103,14 +107,14 @@ export function FloatingContact() {
   return (
     <div className="fixed bottom-20 lg:bottom-8 right-6 z-50 flex flex-col gap-4">
       <a 
-        href={`tel:${displayPhone.replace(/\s/g, '')}`} 
+        href={\`tel:\${displayPhone.replace(/\\s/g, '')}\`} 
         className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-card-bg border border-border-subtle flex items-center justify-center text-text-primary hover:text-primary-theme hover:border-primary-theme transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(42,77,58,0.3)]"
         aria-label="Call Us"
       >
         <Phone className="w-6 h-6" />
       </a>
       <a 
-        href={`https://wa.me/${phoneNumber}`} 
+        href={\`https://wa.me/\${phoneNumber}\`} 
         target="_blank" 
         rel="noopener noreferrer" 
         className="w-10 h-10 lg:w-14 lg:h-14 rounded-full bg-[#25D366] flex items-center justify-center text-white hover:bg-[#20bd5a] transition-all duration-300 shadow-lg hover:shadow-[0_0_20px_rgba(37,211,102,0.4)]"
@@ -199,3 +203,7 @@ export function Footer() {
     </footer>
   );
 }
+`;
+
+fs.writeFileSync('src/components/Layout.tsx', layoutTsx);
+console.log("Layout.tsx updated successfully");

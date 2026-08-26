@@ -1,12 +1,13 @@
 import { useRef, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { CheckCircle2 } from 'lucide-react';
+import { MobileExpandable } from './MobileExpandable';
 
 export function Hero() {
   return (
     <section className="relative flex flex-col lg:block overflow-hidden lg:min-h-screen bg-primary-bg">
       {/* Background Video & Overlay */}
-      <div className="relative w-full aspect-video mt-[88px] lg:mt-0 lg:absolute lg:inset-0 lg:z-0 lg:h-full overflow-hidden bg-black pointer-events-none">
+      <div className="relative w-full aspect-[4/3] sm:aspect-video mt-[64px] lg:mt-0 lg:absolute lg:inset-0 lg:z-0 lg:h-full overflow-hidden bg-black pointer-events-none">
         <video
           autoPlay
           loop
@@ -20,13 +21,13 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#05070B]/90 via-[#05070B]/50 to-transparent hidden lg:block"></div>
       </div>
 
-      <div className="relative z-10 w-full px-6 pt-10 pb-16 lg:px-8 lg:pt-32 lg:pb-20 flex lg:items-center lg:min-h-screen">
+      <div className="relative z-10 w-full px-6 pt-8 pb-8 lg:px-8 lg:pt-32 lg:pb-20 flex lg:items-center lg:min-h-screen">
         <div className="w-full lg:w-3/5 xl:w-1/2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="py-0 lg:py-8"
+            className="py-2 lg:py-8"
           >
             <p className="text-primary-theme text-sm font-semibold tracking-[0.2em] uppercase mb-4 lg:mb-6 flex items-center gap-4">
               <span className="w-8 h-px bg-primary-theme"></span>
@@ -153,14 +154,17 @@ export function About() {
             </p>
             
             <div className="space-y-6 text-text-secondary text-lg lg:text-xl leading-relaxed mb-10">
+              <MobileExpandable collapsedHeight="120px" gradientFrom="from-primary-bg">
+
               <p>
                 At Madhyam Yog, we view Yoga not merely as physical exercise, but as a comprehensive blueprint for living. Our holistic wellness platform was created with one simple vision: to seamlessly integrate the ancient wisdom of traditional Yoga with practical, modern wellness guidance.
               </p>
               <p>
                 We believe that every aspect of your life—from how you breathe and move, to what you consume and how you rest—is deeply interconnected. By honoring these connections, we help you cultivate lasting balance, resilience, and vitality in an increasingly fast-paced world.
               </p>
+            
+              </MobileExpandable>
             </div>
-
             <div className="pt-8 border-t border-border-subtle">
               <p className="text-xl uppercase tracking-widest text-primary-theme font-semibold mb-4">The Foundation</p>
               <div className="flex flex-wrap gap-4 text-text-lg font-medium tracking-wider uppercase">
@@ -277,8 +281,12 @@ export function Founder() {
             </div>
 
             <blockquote className="text-xl text-text-primary font-serif leading-relaxed italic mb-10 pl-6 border-l border-primary-theme relative">
+              <MobileExpandable collapsedHeight="80px" gradientFrom="from-primary-bg">
+
                <span className="absolute -left-3 -top-2 text-4xl text-primary-theme opacity-40">"</span>
                Health is not achieved by treating one symptom at a time. It is built through balance, consistency and conscious living.
+            
+              </MobileExpandable>
             </blockquote>
 
             <a

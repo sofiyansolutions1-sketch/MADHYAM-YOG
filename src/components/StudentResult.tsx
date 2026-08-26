@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { MobileExpandable } from './MobileExpandable';
 
 export function StudentResult() {
   const transformations = [
@@ -57,12 +58,16 @@ export function StudentResult() {
                 <h3 className="text-2xl lg:text-3xl font-serif text-text-primary mb-4 leading-tight">
                   {item.title}
                 </h3>
-                <p className="text-text-secondary leading-relaxed mb-4">
-                  {item.desc1}
-                </p>
-                <p className="text-text-secondary leading-relaxed mb-8">
-                  {item.desc2}
-                </p>
+                <div className="mb-8">
+                  <MobileExpandable collapsedHeight="80px" gradientFrom="from-primary-bg">
+                    <p className="text-text-secondary leading-relaxed mb-4">
+                      {item.desc1}
+                    </p>
+                    <p className="text-text-secondary leading-relaxed">
+                      {item.desc2}
+                    </p>
+                  </MobileExpandable>
+                </div>
                 <div className="mt-auto pt-4 border-t border-border-subtle">
                   <p className="text-sm uppercase tracking-widest font-bold text-primary-theme leading-relaxed">
                     {item.footer}

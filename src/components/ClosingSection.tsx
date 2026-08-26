@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { ReadMore } from './ReadMore';
 import { ChevronDown, Quote } from 'lucide-react';
 
 const GoogleIcon = ({ className }: { className?: string }) => (
@@ -159,9 +160,9 @@ export function Testimonials() {
                  <Stars />
                </div>
 
-               <p className="text-text-secondary text-lg leading-relaxed flex-grow">
-                 {item.text}
-               </p>
+               <div className="text-text-secondary text-lg leading-relaxed flex-grow">
+                 <ReadMore text={item.text} maxLength={100} />
+               </div>
             </motion.div>
           ))}
         </div>
@@ -289,20 +290,19 @@ export function FinalCTA() {
         </p>
         
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-          <a
-             href="#contact"
-             className="bg-primary-theme hover:bg-accent-theme text-sm font-bold tracking-wider uppercase transition-all duration-300 border border-transparent hover:border-accent-theme hover:shadow-[0_0_30px_rgba(42,77,58,0.4)] w-full sm:w-auto"
+          <a 
+            href="#contact" 
+            className="bg-primary-theme hover:bg-accent-theme text-sm font-bold tracking-wider uppercase transition-all duration-300 border border-transparent hover:border-accent-theme hover:shadow-[0_0_30px_rgba(42,77,58,0.4)] w-full sm:w-auto px-8 py-4"
           >
              Book a Consultation
           </a>
-          <a
-             href="#programs"
-             className="bg-transparent border border-border-subtle hover:border-primary-theme text-text-sm font-bold tracking-wider uppercase transition-colors w-full sm:w-auto"
+          <a 
+            href="#programs" 
+            className="bg-transparent border border-border-subtle hover:border-primary-theme text-text-sm font-bold tracking-wider uppercase transition-colors w-full sm:w-auto px-8 py-4"
           >
              Join Madhyam Yog
           </a>
         </div>
-
         <p className="font-serif italic text-text-xl border-t border-border-subtle pt-12 inline-block">
           Your body is your first home. Take care of it.
         </p>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
+import { MobileExpandable } from './MobileExpandable';
 import { X, Maximize2 } from 'lucide-react';
 
 const galleryImages = [
@@ -51,7 +52,9 @@ export function GallerySection() {
         </div>
 
         {/* Larger 3-Column Grid Layout to cover extra space */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+        <MobileExpandable collapsedHeight="600px" gradientFrom="from-primary-bg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10">
+            
           {galleryImages.map((image, idx) => (
             <motion.div
               key={image.id}
@@ -80,9 +83,10 @@ export function GallerySection() {
               </div>
             </motion.div>
           ))}
-        </div>
+        
+          </div>
+        </MobileExpandable>
       </div>
-
       {/* Full-screen Lightbox */}
       <AnimatePresence>
         {selectedImage && (

@@ -1,4 +1,6 @@
 import { motion } from 'motion/react';
+import { ReadMore } from './ReadMore';
+import { MobileExpandable } from './MobileExpandable';
 import { ArrowRight, Activity, Users, User, ShieldPlus, Heart, Scale, Flame, RefreshCcw, BrainCircuit, Smile } from 'lucide-react';
 
 const programs = [
@@ -128,9 +130,7 @@ export function Programs() {
                       {prog.formula}
                     </p>
                   )}
-                  <p className="text-text-lg leading-relaxed mb-6">
-                    {prog.desc}
-                  </p>
+                  <div className="text-text-lg leading-relaxed mb-6"><ReadMore text={prog.desc} maxLength={80} /></div>
                   
                   {prog.includes.length > 0 && (
                     <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">

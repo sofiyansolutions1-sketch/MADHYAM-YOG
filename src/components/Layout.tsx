@@ -20,7 +20,7 @@ export function Navbar() {
     { name: 'About', href: '/about' },
     { name: 'Wellness', href: '/wellness' },
     { name: 'Content', href: '/content' },
-    { name: 'About Shilpa', href: '/teacher' },
+    { name: 'Teacher', href: '/teacher' },
     { name: 'Contact', href: '/contact' },
   ];
 
@@ -69,7 +69,7 @@ export function Navbar() {
         <div className="w-full max-w-4xl mx-auto px-2 md:px-8 py-3 md:py-4">
           <ul className="flex items-center justify-between w-full md:gap-8">
             {navLinks.map((link) => {
-              const displayName = link.name === 'About Shilpa' ? 'Shilpa' : link.name;
+              const displayName = link.name;
               return (
               <li key={link.name} className="flex shrink flex-col items-center justify-center text-center">
                 {link.name === 'Contact' ? (
@@ -160,9 +160,9 @@ export function Footer() {
           <div className="md:col-span-3 lg:col-span-2 lg:col-start-7">
             <h4 className="text-text-sm">Explore</h4>
             <ul className="space-y-4">
-              {['Home', 'About', 'Wellness', 'Content', 'About Shilpa', 'Contact'].map((item) => {
+              {['Home', 'About', 'Wellness', 'Content', 'Teacher', 'Contact'].map((item) => {
                 let path = '/';
-                if (item === 'About Shilpa') path = '/teacher';
+                if (item === 'Teacher') path = '/teacher';
                 else if (item !== 'Home') path = '/' + item.toLowerCase();
                 
                 return (
